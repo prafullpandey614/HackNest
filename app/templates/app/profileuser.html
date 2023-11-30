@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block bodyContent %}
+
+<div class="hero min-h-screen bg-base-200">
+    <div class="hero-content flex-col lg:flex-row-reverse">
+      <img src="https://images.unsplash.com/photo-1586907835000-f692bbd4c9e0?q=80&w=1922&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="max-w-sm  w-64 rounded-lg shadow-2xl mask mask-circle" />
+      <div>
+        <h1 class="text-5xl font-bold">Austin Martin</h1>
+        <p class="py-6">CSE Graduate | SWE @ Akamai Technology</p>
+        <button class="btn btn-primary">Edit Profile</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats shadow">
+  
+    <div class="stat">
+      <div class="stat-title">Total Hackathon Attended</div>
+      <div class="stat-value">89,400</div>
+      <div class="stat-desc">21% more than last month</div>
+    </div>
+    
+  </div>
+
+{% endblock bodyContent %}
