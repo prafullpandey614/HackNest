@@ -1,4 +1,4 @@
-﻿# Hackathon Hosting Application
+﻿# HackNest , A Hackathon Hosting Application 
 
 This Hackathon Hosting Application is built using Django, designed to streamline the process of organizing and managing hackathons.
 
