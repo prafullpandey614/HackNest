@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block bodyContent %}
+{% comment %} {{hackathon}} {% endcomment %}
+<div class="flex justify-center my-3">
+{% for hackathons in hackathon %}
+    <a href={% url "singlehackathon" %}>
+    <div class="card w-96 bg-base-100 shadow-xl m-2">
+      <figure>
+        <img
+          src={{hackathons.poster.url}}
+        />
+      </figure>
+      <div class="card-body">
+        <h2 class="card-title">
+         {{hackathons.name}}
+          <div class="badge badge-primary">NEW</div>
+        </h2>
+        <p>{{hackathons.event_desc}}</p>
+        <div class="card-actions justify-end">
+          <div class="badge badge-outline">Innovation</div>
+          <div class="badge badge-outline">Products</div>
+        </div>
+      </div>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+{% endblock bodyContent %}
