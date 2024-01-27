@@ -1,0 +1,24 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+asgiref = "==3.7.2"
+django = "==4.2.9"
+django-rest-framework = "==0.1.0"
+djangorestframework = "==3.14.0"
+pillow = "==10.2.0"
+python-dotenv = "==1.0.0"
+pytz = "==2023.3.post1"
+sqlparse = "==0.4.4"
+typing-extensions = "==4.9.0"
+tzdata = "==2023.4"
+djangorestframework-simplejwt = "*"
+django-rest-swagger = "*"
+drf-yasg = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"

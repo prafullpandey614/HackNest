@@ -3,7 +3,12 @@ from django.views import View
 from django.contrib.auth.models import User
 from django.contrib.auth import login,authenticate,forms,logout
 from django.shortcuts import get_object_or_404
-# Create your views here.
+
+from rest_framework.generics import CreateAPIView
+
+from app.serializers import HackathonSerializer
+
+from .models import Hackathons
 
 class Home(View):
     def get(self,request):
@@ -61,10 +66,16 @@ class Logout(View):
                 "error": True,
             })
         
-class Hackathons(View):
+class Hackathonss(View):
     def get(self,request):
-        return render(request,'app/hackathons.html')
 
+        return render(request,'app/hackathons.html')
+class HackathonsList(View):
+    def get(self,request):
+        hackathons = Hackathons.objects.all()
+        return render(request,'app/hacklist.html',context={
+            "hackathon" : hackathons 
+        })
 class SingleHackathonView(View):
     def get(self,request):
         return render(request,'app/singlehack.html')
@@ -72,3 +83,8 @@ class SingleHackathonView(View):
 class Profile(View):
     def get(self,request):
         return render(request,'app/profileuser.html')
+
+class AddHackathonAPIView(CreateAPIView):
+    queryset = Hackathons.objects.all()
+    serializer_class = HackathonSerializer
+    

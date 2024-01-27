@@ -25,7 +25,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["env-hackenv.eba-nygpup6f.ap-south-1.elasticbeanstalk.com"]
+ALLOWED_HOSTS = ["env-hackenv.eba-nygpup6f.ap-south-1.elasticbeanstalk.com","*"]
 
 
 # Application definition
@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
+    'rest_framework',
+    'rest_framework_simplejwt',
+    'rest_framework_swagger',
+    'drf_yasg'   ,
 ]
 
 MIDDLEWARE = [
@@ -72,7 +76,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'HackNest.wsgi.application'
 
+REST_FRAMEWORK = {
 
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+
+}
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
@@ -125,3 +136,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / "media"
