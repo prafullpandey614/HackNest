@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
     'rest_framework',
+    'rest_framework_simplejwt',
+    'rest_framework_swagger',
+    'drf_yasg'   ,
 ]
 
 MIDDLEWARE = [
@@ -73,7 +76,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'HackNest.wsgi.application'
 
+REST_FRAMEWORK = {
 
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+
+}
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
